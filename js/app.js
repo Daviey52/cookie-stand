@@ -11,8 +11,24 @@ let seattle = {
   avgCookiesSoldEachHourArray: [],
 
   getRandomCustomers: function () {
-    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+    for (let i = 0; i < 13; i++) { this.avgCookiesSoldEachHourArray.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min)); }
+    seattle.getRandomCustomers();
+    console.log(this.avgCookiesSoldEachHourArray);
+
   }
 
 };
-console.log(seattle.getRandomCustomers());
+//console.log(seattle.getRandomCustomers());
+//console.log(this.avgCookiesSoldEachHourArray);
+
+const seattleList = document.getElementById('Seattle-sales');
+console.log(seattleList);
+for (let i = 0; i < hours.length; i++) {
+  let li = document.createElement('li');
+  li.textContent = `${this.avgCookiesSoldEachHourArray} came`;
+  seattleList.appendChild(li);
+}
+
+
+
+
