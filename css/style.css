@@ -1,0 +1,18 @@
+table{
+  border-collapse: separate;
+  border-spacing: 5px;
+  border:medium solid gray;
+  margin: 25px auto;
+}
+
+th,td{
+  padding:10px;
+  border:1px solid rgb(170, 170, 184);
+  border-radius: 5px;
+
+}
+
+th{
+  background-color: gold;
+  font-weight: bold;
+}
