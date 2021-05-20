@@ -1,18 +1,67 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+
+}
 table{
   border-collapse: separate;
   border-spacing: 5px;
   border:medium solid gray;
   margin: 25px auto;
 }
-
 th,td{
   padding:10px;
   border:1px solid rgb(170, 170, 184);
   border-radius: 5px;
-
 }
 
 th{
   background-color: gold;
   font-weight: bold;
 }
+header{
+  background-color: aqua;
+  height:100px;
+}
+nav{
+  width:960px;
+  margin:auto;
+}
+footer{
+  background-color:brown;
+  height:50px;
+}
+
+header li{
+  display:inline-block;
+  line-height: 100px;
+  margin-left: 250px;
+
+}
+header li:first-child{
+  margin-left:300px ;
+
+}
+footer li {
+  display:inline-block;
+  line-height:50px;
+  margin-left: 250px;
+}
+main img{
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+#chinook-img{
+  margin-bottom: 100px;
+  float: right;
+}
+p li:first-child {
+  float: left;
+
+}
+p li{
+  display:inline-block;
+  line-height: 100px;
+
+}
+
+
