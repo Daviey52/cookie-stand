@@ -1,9 +1,10 @@
 'use strict';
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm',];
+let newCity = document.getElementById('newCity');
 
+console.log(newCity);
 let storesArray = [];
 function CreateCities(name, min, max, avg) {
-
   this.name = name;
   this.min = min;
   this.max = max;
@@ -12,8 +13,9 @@ function CreateCities(name, min, max, avg) {
   this.cookiesPerHourArray = [];
 
   storesArray.push(this);
-  console.log(storesArray);
+  //this.renderCity();
 }
+
 let seattle = new CreateCities('Seattle', 23, 65, 6.3);
 let tokyo = new CreateCities('Tokyo', 3, 24, 1.2);
 let dubai = new CreateCities('Dubai', 11, 38, 3.7);
@@ -23,6 +25,17 @@ let lima = new CreateCities('Lima', 2, 16, 4.6);
 CreateCities.prototype.getRandomCustomers = function () {
   return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
 };
+function handleSubmit(event) {
+  event.preventDefault();
+  let name = event.target.name.value;
+  let min = +event.target.min.value;
+  let max = +event.target.max.value;
+  let avg = +event.target.avg.value;
+
+  let newStore = new CreateCities(name, min, max, avg);
+  newStore.renderCity();
+  console.log(newStore);
+}
 
 CreateCities.prototype.calcCookiesPerHour = function () {
   for (let i = 0; i < hours.length; i++) {
@@ -30,7 +43,6 @@ CreateCities.prototype.calcCookiesPerHour = function () {
     let cookiesSoldThisHour = Math.ceil(custThisHour * this.avg);
     this.cookiesPerHourArray.push(cookiesSoldThisHour);
     this.dailyTotal += cookiesSoldThisHour;
-    console.log(cookiesSoldThisHour);
   }
 };
 
@@ -41,7 +53,6 @@ CreateCities.prototype.renderCity = function () {
   let td = document.createElement('td');
   td.textContent = this.name;
   tr.appendChild(td);
-  console.log(this.cookiesPerHourArray);
   for (let i = 0; i < this.cookiesPerHourArray.length; i++) {
     let td = document.createElement('td');
     td.textContent = this.cookiesPerHourArray[i];
@@ -67,7 +78,6 @@ function thead() {
   td.textContent = 'Total';
   tr.appendChild(td);
   e.appendChild(tr);
-
 }
 console.log(thead);
 this.thead();
@@ -77,6 +87,12 @@ tokyo.renderCity();
 dubai.renderCity();
 paris.renderCity();
 lima.renderCity();
+
+
+
+
+newCity.addEventListener('submit', handleSubmit);
+
 
 
 
