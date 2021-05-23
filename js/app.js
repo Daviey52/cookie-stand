@@ -1,9 +1,8 @@
 'use strict';
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm',];
 let newCity = document.getElementById('newCity');
-
-console.log(newCity);
 let storesArray = [];
+console.log(storesArray, 'new');
 function CreateCities(name, min, max, avg) {
   this.name = name;
   this.min = min;
@@ -13,9 +12,8 @@ function CreateCities(name, min, max, avg) {
   this.cookiesPerHourArray = [];
 
   storesArray.push(this);
-  //this.renderCity();
-}
 
+}
 let seattle = new CreateCities('Seattle', 23, 65, 6.3);
 let tokyo = new CreateCities('Tokyo', 3, 24, 1.2);
 let dubai = new CreateCities('Dubai', 11, 38, 3.7);
@@ -43,6 +41,7 @@ CreateCities.prototype.calcCookiesPerHour = function () {
     let cookiesSoldThisHour = Math.ceil(custThisHour * this.avg);
     this.cookiesPerHourArray.push(cookiesSoldThisHour);
     this.dailyTotal += cookiesSoldThisHour;
+    console.log(this.cookiesPerHourArray, 'array');
   }
 };
 
@@ -81,17 +80,41 @@ function thead() {
 }
 console.log(thead);
 this.thead();
-
 seattle.renderCity();
 tokyo.renderCity();
 dubai.renderCity();
 paris.renderCity();
 lima.renderCity();
-
-
-
-
 newCity.addEventListener('submit', handleSubmit);
+
+function tFooter() {
+  let e = document.getElementById('table-footer');
+  let tr = document.createElement('tr');
+  let td = document.createElement('td');
+  td.textContent = 'Total';
+  tr.appendChild(td);
+  for (let i = 0; i < hours.length; i++) {
+    let columnTotal = 0;
+    for (let j = 0; j < storesArray.length; j++) {
+      columnTotal += +storesArray[j].cookiesPerHourArray[i];
+      console.log(+columnTotal, 'this');
+      td = document.createElement('td');
+      td.textContent = columnTotal;
+    }
+    tr.appendChild(td);
+  }
+  td = document.createElement('td');
+  tr.appendChild(td);
+  e.appendChild(tr);
+}
+console.log(tFooter);
+this.tFooter();
+
+
+
+
+
+
 
 
 
