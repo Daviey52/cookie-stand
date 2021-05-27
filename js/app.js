@@ -14,6 +14,7 @@ function CreateCities(name, min, max, avg) {
   storesArray.push(this);
 
 }
+
 let seattle = new CreateCities('Seattle', 23, 65, 6.3);
 let tokyo = new CreateCities('Tokyo', 3, 24, 1.2);
 let dubai = new CreateCities('Dubai', 11, 38, 3.7);
@@ -23,17 +24,7 @@ let lima = new CreateCities('Lima', 2, 16, 4.6);
 CreateCities.prototype.getRandomCustomers = function () {
   return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
 };
-function handleSubmit(event) {
-  event.preventDefault();
-  let name = event.target.name.value;
-  let min = +event.target.min.value;
-  let max = +event.target.max.value;
-  let avg = +event.target.avg.value;
 
-  let newStore = new CreateCities(name, min, max, avg);
-  newStore.renderCity();
-  console.log(newStore);
-}
 
 CreateCities.prototype.calcCookiesPerHour = function () {
   for (let i = 0; i < hours.length; i++) {
@@ -85,7 +76,7 @@ tokyo.renderCity();
 dubai.renderCity();
 paris.renderCity();
 lima.renderCity();
-newCity.addEventListener('submit', handleSubmit);
+
 
 function tFooter() {
   let e = document.getElementById('table-footer');
@@ -93,25 +84,38 @@ function tFooter() {
   let td = document.createElement('td');
   td.textContent = 'Total';
   tr.appendChild(td);
+  let finalTotal = 0;
+
   for (let i = 0; i < hours.length; i++) {
     let columnTotal = 0;
     for (let j = 0; j < storesArray.length; j++) {
       columnTotal += +storesArray[j].cookiesPerHourArray[i];
-      console.log(+columnTotal, 'this');
       td = document.createElement('td');
       td.textContent = columnTotal;
     }
     tr.appendChild(td);
+    finalTotal += columnTotal;
   }
   td = document.createElement('td');
+  td.textContent = finalTotal;
   tr.appendChild(td);
   e.appendChild(tr);
 }
 console.log(tFooter);
 this.tFooter();
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let name = event.target.name.value;
+  let min = +event.target.min.value;
+  let max = +event.target.max.value;
+  let avg = +event.target.avg.value;
 
+  let newStore = new CreateCities(name, min, max, avg);
+  newStore.renderCity();
 
+}
+newCity.addEventListener('submit', handleSubmit);
 
 
 

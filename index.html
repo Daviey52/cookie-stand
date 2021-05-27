@@ -4,34 +4,63 @@
 <head>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
   <h1><a href="sales.html"> Pat's Salmon Cookies sale</a></h1>
   <title>Pat's Salmon Cookies</title>
 </head>
 
 <body>
   <header>
-    <nav>
-      <a href=""><img src="" alt=""></a>
-      <ul>
-        <li><a href="">Search</a></li>
-        <li><a href="">Login</a></li>
-        <li><a href="">Sign up</a></li>
-      </ul>
+    <nav class="nav">
+      <div class="top">
+        <a href=""><img src="" alt=""></a>
+        <ul>
+          <div class="logo">Pat's Salmon cookies
+          </div>
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Sign up</a></li>
+          <li><a href="#">Cookie Selection</a></li>
+          <li><a href="#">Home</a> </li>
+
+        </ul>
+        <img class=" headerimage" src="/img/frosted-cookie.jpg" alt="headerimage">
+      </div>
     </nav>
   </header>
 
   <main>
+    <div class="main-container">
+      <span class="helper"></span>
+      <img class="mainimg" src="/img/salmon.png" alt="main image">
+    </div>
 
-    <img src="img/family.jpg" alt="#"><img id="chinook-img" src="img/chinook.jpg" alt="#">
+    <h2>Salmon Cookies History</h2>
     <p>
-    <h3>Our Locations</h3>
-    <ul>
+      Salmon is a common name for several species of ray-finned fish in the famility Salmonidae. Salmon is considered to
+      be healthy due to it's high protein , high omega-3 and high vitamin A and D. Health benefits associated with
+      omega-3
+      include relieving sympots of dry eye disease, improving cognitive function and helping to manage symptos of
+      rheumatoid arthritis. Vitamin A helps with immune boasting and also improving reproduction and vision. Vitamin D
+      is an immune-boosting nutrient and also helps our bodies to absorb calcium. Salmon also contains Vitamin B12 which
+      is important in preventing weakness , tiredness, constipation and loss of appetite.Salmon is a great choice for
+      the environmentally conscious eater, since eating salmon can do more than boost your own
+      health. Alaska Salmon is both wild and sustainable, good for the environment and good for us.
+    </p>
+
+    <p class="p1">
+      <img class="fish" src="./img/fish.jpg" alt="fish">
+    <h2>Our Locations</h2>
+    <ul class="location">
       <li>Home location(Seattle)</li>
       <li>Paris</li>
       <li>Dubai</li>
       <li>Tokyo</li>
       <li>Lima</li>
     </ul>
+    </p>
+    <p>
     <h2>Hours Open </h2>
     <ul id="Time">
       <li>Monday:06:00 am - 06:00 pm</li>
@@ -42,18 +71,46 @@
       <li>Saturday:08:00am - o9:00pm</li>
       <li>Sunday:08:00am - o9:00pm</li>
     </ul>
-
     </p>
 
   </main>
+  <script src="https://kit.fontawesome.com/a6d52db92e.js" crossorigin="anonymous"></script>
 
 </body>
+
 <footer>
-  <ul>
-    <li><a href="#">Nutrition and Allegen</a></li>
-    <li><a href="#">Contact Us</a></li>
-    <li><a href="#">Terms of use</a></li>
-  </ul>
+  <nav class="control">
+    <div>
+      <ul class="info">
+        <li><a href="#">Nutrition and Allegen</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Terms of use</a></li>
+        <li><a href="#">Accesibility</a></li>
+
+      </ul>
+    </div>
+    <p class="copyright"> &copy;2021 Pat's Salmon <Cookies class="inc"></Cookies>
+    </p>
+
+
+    <div class="socialmedia">
+      <ul class="social">
+        <a href="#">
+          <li><i class="fab fa-facebook"></i></li>
+        </a>
+        <a href="#">
+          <li><i class="fab fa-instagram"></i></li>
+        </a>
+        <a href="#">
+          <li><i class="fab fa-youtube"></i></li>
+        </a>
+        <a href="#">
+          <li><i class="fab fa-whatsapp-square"></i></li>
+        </a>
+      </ul>
+    </div>
+
+  </nav>
 
 </footer>
 
